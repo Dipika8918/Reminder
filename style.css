@@ -1,0 +1,28 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    color: aliceblue;
+    font-family: Courier New, Courier, monospace;
+}
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    position: static;
+    width: 400px;
+    height: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7),rgba(4,9,30,0.1)),url(background.jpg);
+}
+img{
+    padding: 70% 0 0 40%;
+}
+h3{
+    padding: 0 0 0 38%;
+}
+.header a{
+    text-decoration: none;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainStyle.css">
+    <title>Reminder</title>
+    <link rel="icon" href="tabPic.png" type="image/x-icon">
+</head>
+<body>
+    <section class="header">
+        <div class="head">
+            <div class="topIn">
+                <img src="monkey.png" alt="Bandar">
+                <h2>It's me</h2>
+            </div>
+        </div>
+        <div class="mainMsg">
+            <div class="message">
+                <h3 id="msg1"></h3>
+            </div>
+            <div class="message">
+                <h3 id="msg2"></h3>
+            </div>
+            <div class="message">
+                <h3 id="msg3"></h3>
+            </div>
+            <div class="message">
+                <h3 id="msg4"></h3>
+            </div>
+            <div class="message">
+                <h3 id="msg5"></h3>
+            </div>
+            <div class="message">
+                <h3 id="msg6"></h3>
+            </div>
+            <div class="message">
+                <h3 id="msg7"></h3>
+            </div>
+            <div class="message">
+                <h3 id="msg8"></h3>
+            </div>
+            <div class="message">
+                <h3 id="msg9"></h3>
+            </div>
+            <div class="message">
+                <h3 id="msg10"></h3>
+            </div>
+            <div class="message">
+                <audio id="msg11" src="song.mp3"></audio>
+            </div>
+            <div class="message">
+                <h3 id="msg12"></h3>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    function typeText(targetId, text, delay = 150) {
+        let target = document.getElementById(targetId);
+        let index = 0;
+        return new Promise((resolve, reject) => {
+            function typeLetter() {
+                if (index < text.length) {
+                    target.textContent += text[index];
+                    index++;
+                    setTimeout(typeLetter, delay);
+                } else {
+                    resolve();
+                }
+            }
+            typeLetter();
+        });
+    }
+    async function typeAllMessages() {
+        await typeText('msg1', "Hi, it's me.");
+        await typeText('msg2', "How r u?");
+        await typeText('msg3', "What's going on?");
+        await typeText('msg4', "Yara, kab hum wahi purane time k jaise ghanto tak batein karenge?");
+        await typeText('msg5', "Shanti jaruri hoti hai, but itni bhi nahi ki shanti hi apko chuvne lage ????");
+        await typeText('msg6', "Thora sa to samay nikalo humare liye bhi ....");
+        await typeText('msg7', "I really miss you yaar .....");
+        await typeText('msg8', "I hope jald hi woh samay ayega jab hum pahle ki tarah batein karenge ........");
+        await typeText('msg9', "Take Care .....");
+        await typeText('msg10', "Wait wait wait, a song is for you, sunte jana, volume up karlo..");
+        document.getElementById('msg11').play();
+        await new Promise(resolve => setTimeout(resolve, 5000));
+        await typeText('msg12', "REPLY to the sender ASAP ....");
+    }
+    typeAllMessages();
+</script>
+</html>
